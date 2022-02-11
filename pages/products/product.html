@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/ae7ce8d210.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://incredibleui.netlify.app/main.css">
+    <link rel="stylesheet" href="./products.css">
+</head>
+
+<body>
+    <header class="nav-container">
+        <div class="row">
+            <a href="#main-menu" id="main-menu-toggle" class="menu-toggle">
+                <span class="fa fa-bars"></span>
+            </a>
+            <div class="logo">
+                <h3>Sprint</h3>
+                <div class="badge-conatiner">
+                    <div class="badge">
+                        <span class="material-icons-outlined">
+                            notifications
+                        </span>
+                        <sup class="badge-icon">4</sup>
+                    </div>
+                    <div class="badge">
+                        <span class="material-icons-outlined">
+                            shopping_bag
+                        </span>
+                        <sup class="badge-icon">4</sup>
+                    </div>
+                    <div class="status">
+                        <img class="avatar round sm"
+                            src="https://images.unsplash.com/photo-1561409106-fece1abb71cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                            alt="avatar/image">
+                        <div class="online"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="text" placeholder="search" class="input-content">
+        <nav id="main-menu" class="main-menu">
+            <a href="#main-menu-toggle" id="main-menu-close" class="menu-close">
+                <span class="fa fa-close" aria-hidden="true"></span>
+            </a>
+            <ul>
+                <li><a href="#">Casual</a></li>
+                <li><a href="#">Fitness</a></li>
+                <li><a href="#">Track</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><button class="btn" id="default-btn">Account</button></li>
+                <li><button class="btn" id="primary">Orders</button></li>
+                <li><button class="btn" id="warning">Sign Out</button></li>
+            </ul>
+        </nav>
+        <a href="#main-menu-toggle" class="backdrop" tabindex="-1" hidden></a>
+    </header>
+    <div class="wrapper">
+        <div class="side-bar">
+            <aside class="nav">
+                <a href="#filter-menu" id="filter-menu-toggle" class="filter-menu-toggle">
+                    <button class="btn float">
+                        <span class="material-icons-outlined">
+                            filter_list
+                        </span>
+                    </button>
+                </a>
+                <ul class="nav-list" id="filter-menu" class="filter-menu">
+                    <li class="nav-item">
+                        <a class="toggle-close" href="">
+                            <button class="btn float" id="error">
+                                <span class="material-icons-outlined">
+                                    filter_list_off
+                                </span>
+                            </button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <h3>Filter</h3>
+                        <a href="">Clear</a>
+                    </li>
+                    <li class="nav-item">
+                        <h4>Sort By</h4>
+                        <ul>
+                            <li><input type="radio" name="sort" id="descending"><label for="descending">
+                                    Price:
+                                    High-Low </label></li>
+                            <li><input type="radio" name="sort" id="ascending"><label for="ascending">
+                                    Price:
+                                    Low-High </label></li>
+                        </ul>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <h4>Category</h4>
+                        <ul>
+                            <li><input type="radio" name="category" id="category">
+                                <label for="category"> Sports</label></li>
+                            <li><input type="radio" name="category" id="category">
+                                <label for="category">Track</label>
+                            </li>
+                            <li><input type="radio" name="category" id="category">
+                                <label for="category">Casual</label>
+                            </li>
+                            <li><input type="radio" name="category" id="category">
+                                <label for="category">Fitness</label>
+                            </li>
+                            <li><input type="radio" name="category" id="category">
+                                <label for="category">Men</label>
+                            </li>
+                            <li><input type="radio" name="category" id="category">
+                                <label for="category">Women</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <h4>Availability</h4>
+                        <ul>
+                            <li><input type="checkbox" name="toggle-inventory" id="toggle-inventory" checked=""><label
+                                    for="toggle-inventory"> Include Out Of Stock </label>
+                            </li>
+                        </ul>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <h4>Delivery</h4>
+                        <ul>
+                            <li><input type="checkbox" name="toggle-delivery" id="toggle-delivery"><label
+                                    for="toggle-delivery">
+                                    Fast Delivery Only </label></li>
+                        </ul>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <h4>Price</h4>
+                        <ul>
+                            <li><input type="range" value="0" max="15000" oninput="num.value = this.value">
+                                <output id="num">0</output></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <a href="#filter-menu-toggle" class="backdrop" hidden></a>
+            </aside>
+        </div>
+        <div class="products-container">
+            <section id="cards">
+                <div class="articlewrap">
+                    <article>
+                        <h4>Soft and Smooth</h4>
+                        <h3>Nike Air Max</h3>
+                        <img src="../../assets/img/p1.jpg" alt="image" />
+                        <div class="about">
+                            <h6 class="product-description">Sustainable Materials</h6>
+                            <p class="product-price">
+                                ₹ 8,995
+                            </p>
+                            <span>available in colors</span>
+                            <div class="colors">
+                                <div class="blue-unit"></div>
+                                <div class="green-unit"></div>
+                                <div class="red-unit"></div>
+                            </div>
+                        </div>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn" id="default-btn">Add
+                                    to Cart</button></a></p>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn btn-otl-default">Save
+                                    to Wishlist</button></a></p>
+                    </article>
+
+                    <article>
+                        <h4>Soft and Smooth</h4>
+                        <h3>Nike Air Max</h3>
+                        <img src="../../assets/img/p1.jpg" alt="image" />
+                        <div class="about">
+                            <h6 class="product-description">Sustainable Materials</h6>
+                            <p class="product-price">
+                                ₹ 8,995
+                            </p>
+                            <span>available in colors</span>
+                            <div class="colors">
+                                <div class="blue-unit"></div>
+                                <div class="green-unit"></div>
+                                <div class="red-unit"></div>
+                            </div>
+                        </div>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn" id="default-btn">Add
+                                    to Cart</button></a></p>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn btn-otl-default">Save
+                                    to Wishlist</button></a></p>
+                    </article>
+
+                    <article>
+                        <h4>Soft and Smooth</h4>
+                        <h3>Nike Air Max</h3>
+                        <img src="../../assets/img/p1.jpg" alt="image" />
+                        <div class="about">
+                            <h6 class="product-description">Sustainable Materials</h6>
+                            <p class="product-price">
+                                ₹ 8,995
+                            </p>
+                            <span>available in colors</span>
+                            <div class="colors">
+                                <div class="blue-unit"></div>
+                                <div class="green-unit"></div>
+                                <div class="red-unit"></div>
+                            </div>
+                        </div>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn" id="default-btn">Add
+                                    to Cart</button></a></p>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn btn-otl-default">Save
+                                    to Wishlist</button></a></p>
+                    </article>
+
+                    <article>
+                        <h4>Soft and Smooth</h4>
+                        <h3>Nike Air Max</h3>
+                        <img src="../../assets/img/p1.jpg" alt="image" />
+                        <div class="about">
+                            <h6 class="product-description">Sustainable Materials</h6>
+                            <p class="product-price">
+                                ₹ 8,995
+                            </p>
+                            <span>available in colors</span>
+                            <div class="colors">
+                                <div class="blue-unit"></div>
+                                <div class="green-unit"></div>
+                                <div class="red-unit"></div>
+                            </div>
+                        </div>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn" id="default-btn">Add
+                                    to Cart</button></a></p>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn btn-otl-default">Save
+                                    to Wishlist</button></a></p>
+                    </article>
+
+                    <article>
+                        <h4>Soft and Smooth</h4>
+                        <h3>Nike Air Max</h3>
+                        <img src="../../assets/img/p1.jpg" alt="image" />
+                        <div class="about">
+                            <h6 class="product-description">Sustainable Materials</h6>
+                            <p class="product-price">
+                                ₹ 8,995
+                            </p>
+                            <span>available in colors</span>
+                            <div class="colors">
+                                <div class="blue-unit"></div>
+                                <div class="green-unit"></div>
+                                <div class="red-unit"></div>
+                            </div>
+                        </div>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn" id="default-btn">Add
+                                    to Cart</button></a></p>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn btn-otl-default">Save
+                                    to Wishlist</button></a></p>
+                    </article>
+
+                    <article>
+                        <h4>Soft and Smooth</h4>
+                        <h3>Nike Air Max</h3>
+                        <img src="../../assets/img/p1.jpg" alt="image" />
+                        <div class="about">
+                            <h6 class="product-description">Sustainable Materials</h6>
+                            <p class="product-price">
+                                ₹ 8,995
+                            </p>
+                            <span>available in colors</span>
+                            <div class="colors">
+                                <div class="blue-unit"></div>
+                                <div class="green-unit"></div>
+                                <div class="red-unit"></div>
+                            </div>
+                        </div>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn" id="default-btn">Add
+                                    to Cart</button></a></p>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn btn-otl-default">Save
+                                    to Wishlist</button></a></p>
+                    </article>
+
+                    <article>
+                        <h4>Soft and Smooth</h4>
+                        <h3>Nike Air Max</h3>
+                        <img src="../../assets/img/p1.jpg" alt="image" />
+                        <div class="about">
+                            <h6 class="product-description">Sustainable Materials</h6>
+                            <p class="product-price">
+                                ₹ 8,995
+                            </p>
+                            <span>available in colors</span>
+                            <div class="colors">
+                                <div class="blue-unit"></div>
+                                <div class="green-unit"></div>
+                                <div class="red-unit"></div>
+                            </div>
+                        </div>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn" id="default-btn">Add
+                                    to Cart</button></a></p>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn btn-otl-default">Save
+                                    to Wishlist</button></a></p>
+                    </article>
+
+                    <article>
+                        <h4>Soft and Smooth</h4>
+                        <h3>Nike Air Max</h3>
+                        <img src="../../assets/img/p1.jpg" alt="image" />
+                        <div class="about">
+                            <h6 class="product-description">Sustainable Materials</h6>
+                            <p class="product-price">
+                                ₹ 8,995
+                            </p>
+                            <span>available in colors</span>
+                            <div class="colors">
+                                <div class="blue-unit"></div>
+                                <div class="green-unit"></div>
+                                <div class="red-unit"></div>
+                            </div>
+                        </div>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn" id="default-btn">Add
+                                    to Cart</button></a></p>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn btn-otl-default">Save
+                                    to Wishlist</button></a></p>
+                    </article>
+
+                    <article>
+                        <h4>Soft and Smooth</h4>
+                        <h3>Nike Air Max</h3>
+                        <img src="../../assets/img/p1.jpg" alt="image" />
+                        <div class="about">
+                            <h6 class="product-description">Sustainable Materials</h6>
+                            <p class="product-price">
+                                ₹ 8,995
+                            </p>
+                            <span>available in colors</span>
+                            <div class="colors">
+                                <div class="blue-unit"></div>
+                                <div class="green-unit"></div>
+                                <div class="red-unit"></div>
+                            </div>
+                        </div>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn" id="default-btn">Add
+                                    to Cart</button></a></p>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn btn-otl-default">Save
+                                    to Wishlist</button></a></p>
+                    </article>
+
+                    <article>
+                        <h4>Soft and Smooth</h4>
+                        <h3>Nike Air Max</h3>
+                        <img src="../../assets/img/p1.jpg" alt="image" />
+                        <div class="about">
+                            <h6 class="product-description">Sustainable Materials</h6>
+                            <p class="product-price">
+                                ₹ 8,995
+                            </p>
+                            <span>available in colors</span>
+                            <div class="colors">
+                                <div class="blue-unit"></div>
+                                <div class="green-unit"></div>
+                                <div class="red-unit"></div>
+                            </div>
+                        </div>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn" id="default-btn">Add
+                                    to Cart</button></a></p>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn btn-otl-default">Save
+                                    to Wishlist</button></a></p>
+                    </article>
+
+                    <article>
+                        <h4>Soft and Smooth</h4>
+                        <h3>Nike Air Max</h3>
+                        <img src="../../assets/img/p1.jpg" alt="image" />
+                        <div class="about">
+                            <h6 class="product-description">Sustainable Materials</h6>
+                            <p class="product-price">
+                                ₹ 8,995
+                            </p>
+                            <span>available in colors</span>
+                            <div class="colors">
+                                <div class="blue-unit"></div>
+                                <div class="green-unit"></div>
+                                <div class="red-unit"></div>
+                            </div>
+                        </div>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn" id="default-btn">Add
+                                    to Cart</button></a></p>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn btn-otl-default">Save
+                                    to Wishlist</button></a></p>
+                    </article>
+
+                    <article>
+                        <h4>Soft and Smooth</h4>
+                        <h3>Nike Air Max</h3>
+                        <img src="../../assets/img/p1.jpg" alt="image" />
+                        <div class="about">
+                            <h6 class="product-description">Sustainable Materials</h6>
+                            <p class="product-price">
+                                ₹ 8,995
+                            </p>
+                            <span>available in colors</span>
+                            <div class="colors">
+                                <div class="blue-unit"></div>
+                                <div class="green-unit"></div>
+                                <div class="red-unit"></div>
+                            </div>
+                        </div>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn" id="default-btn">Add
+                                    to Cart</button></a></p>
+                        <p> <a href="https://add/link" target="_blank"><button class="btn btn-otl-default">Save
+                                    to Wishlist</button></a></p>
+                    </article>
+
+                    
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
