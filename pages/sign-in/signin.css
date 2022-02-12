@@ -1,0 +1,36 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+html {
+  height: 100%;
+  background: url(../../assets/img/user.svg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.center {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+}
+
+.default-input {
+  margin-top: 10px;
+}
+
+.default-input input {
+  background: transparent;
+}
+
+.logo svg {
+  margin: 0 auto;
+}
